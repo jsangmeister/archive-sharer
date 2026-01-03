@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive Sharer</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#1976d2">
+  <link rel="icon" href="/icon-192.png">
+  <script>
+    // If launched as a share target, redirect to the shared URL
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+  </script>
+</head>
+<body>
+  <h1>Archive Sharer</h1>
+  <p>This app can be installed and used as a share target for URLs. When a URL is shared to this app, it will open the URL in your browser.</p>
+</body>
+</html>
