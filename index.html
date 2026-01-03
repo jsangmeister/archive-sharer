@@ -14,17 +14,14 @@
     }
     document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(document.createTextNode(window.location.href));
-      const params = new URLSearchParams(window.location.search);
-      params.forEach((value, key) => {
-        document.body.appendChild(document.createTextNode(`${key}: ${value}`));
-      });
-      const urlText = params.get('url') || params.get('text');
-      if (urlText) {
-        const url = new URL(urlText);
-        url.search = '';
-        window.location.href = `https://archive.ph/newest/${url.toString()}`;
-      }
     });
+    const params = new URLSearchParams(window.location.search);
+    const urlText = params.get('url') || params.get('text');
+    if (urlText) {
+      const url = new URL(urlText);
+      url.search = '';
+      window.location.href = `https://archive.ph/newest/${url.toString()}`;
+    }
   </script>
 </head>
 <body>
