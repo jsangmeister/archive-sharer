@@ -14,6 +14,10 @@
   "share_target": {
     "action": "index.html",
     "method": "GET",
-    "params": { "url": "url" }
+    "params": {
+      "url": "url",
+      "text": "text",
+      "title": "title"
+    }
   }
 }
