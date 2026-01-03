@@ -12,7 +12,11 @@
       // Relativer Pfad, Service Worker kontrolliert diese Seite
       navigator.serviceWorker.register('service-worker.js', { scope: './' });
     }
+    document.body.appendChild(document.createElement('p', { textContent: window.location.href }));
     const params = new URLSearchParams(window.location.search);
+    params.forEach((value, key) => {
+      document.body.appendChild(document.createElement('p', { textContent: `${key}: ${value}` }));
+    });
     const url = params.get('url');
     if (url) {
       window.location.href = url;
