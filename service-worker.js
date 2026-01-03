@@ -12,7 +12,7 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (
     event.request.method === 'POST' &&
-    url.pathname === '/share'
+    url.pathname === '/archive-sharer/share'
   ) {
     event.respondWith(
       (async () => {

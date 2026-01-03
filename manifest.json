@@ -1,13 +1,14 @@
 {
   "name": "Arhive Sharer",
   "short_name": "ArchiveSharer",
-  "start_url": "/index.html",
+  "start_url": "/archive-sharer/index.html",
+  "scope": "/archive-sharer/",
   "display": "standalone",
   "background_color": "#1976d2",
   "theme_color": "#1976d2",
   "icons": [],
   "share_target": {
-    "action": "/share",
+    "action": "/archive-sharer/share",
     "method": "POST",
     "enctype": "application/x-www-form-urlencoded",
     "params": {
