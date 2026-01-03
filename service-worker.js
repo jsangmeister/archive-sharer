@@ -9,7 +9,6 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
-  // Handle POST to share endpoint within scope, independent of base path
   if (event.request.method === 'POST' && url.pathname.endsWith('/share')) {
     event.respondWith((async () => {
       const formData = await event.request.formData();
@@ -17,7 +16,7 @@ self.addEventListener('fetch', event => {
       const url = new URL(sharedUrl);
       url.search = ''; // Query entfernen
       const target = `https://archive.ph/newest/${url.toString()}`;
-      return Response.redirect(target, 303);
+      return Response.redirect(`index.html?url=${encodeURIComponent(target)}`, 303);
     })());
     return;
   }
