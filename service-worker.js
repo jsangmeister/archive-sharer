@@ -9,7 +9,7 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
-  if (event.request.method === 'POST' && url.pathname.endsWith('/share')) {
+  if (event.request.method === 'POST') {
     event.respondWith((async () => {
       const formData = await event.request.formData();
       const sharedUrl = formData.get('url');
