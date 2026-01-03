@@ -13,10 +13,10 @@
       navigator.serviceWorker.register('service-worker.js', { scope: './' });
     }
     document.addEventListener('DOMContentLoaded', () => {
-      document.body.appendChild(document.createElement('p', { textContent: window.location.href }));
+      document.body.appendChild(document.createTextNode(window.location.href));
       const params = new URLSearchParams(window.location.search);
       params.forEach((value, key) => {
-        document.body.appendChild(document.createElement('p', { textContent: `${key}: ${value}` }));
+        document.body.appendChild(document.createTextNode(`${key}: ${value}`));
       });
       const url = params.get('url');
       if (url) {
