@@ -20,7 +20,8 @@
     if (urlText) {
       const url = new URL(urlText);
       url.search = '';
-      window.open(`https://archive.ph/newest/${url.toString()}`, '_blank');
+      const archiveUrl = `archive.ph/newest/${url.toString()}`;
+      window.location.href = `intent://${archiveUrl}#Intent;scheme=https;package=org.mozilla.firefox;end`;
     }
   </script>
 </head>
