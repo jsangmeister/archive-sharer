@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Archive Sharer</title>
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#1976d2">
-  <link rel="icon" href="/icon-192.png">
+  <!-- Relativ laden, damit es unter /<user>.github.io/archive-sharer/ funktioniert -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1976d2" />
+  <link rel="icon" href="icons/icon-192x192.png" />
   <script>
-    // If launched as a share target, redirect to the shared URL
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js');
+      // Relativer Pfad, Service Worker kontrolliert diese Seite
+      navigator.serviceWorker.register('service-worker.js', { scope: './' });
     }
   </script>
 </head>
 <body>
   <h1>Archive Sharer</h1>
-  <p>This app can be installed and used as a share target for URLs. When a URL is shared to this app, it will open the URL in your browser.</p>
+  <p>Share-Target für URLs. Geteilte URLs werden im Browser geöffnet.</p>
 </body>
 </html>

@@ -1,18 +1,20 @@
 {
-  "name": "Arhive Sharer",
+  "name": "Archive Sharer",
   "short_name": "ArchiveSharer",
-  "start_url": "/archive-sharer/index.html",
-  "scope": "/archive-sharer/",
+  "id": "/archive-sharer/",
+  "start_url": "./",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#1976d2",
   "theme_color": "#1976d2",
-  "icons": [],
+  "icons": [
+    { "src": "icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
   "share_target": {
-    "action": "/archive-sharer/share",
+    "action": "share",
     "method": "POST",
     "enctype": "application/x-www-form-urlencoded",
-    "params": {
-      "url": "url"
-    }
+    "params": { "url": "url" }
   }
 }
