@@ -12,7 +12,7 @@
     { "src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
   "share_target": {
-    "action": "index.html",
+    "action": "/archive-sharer/?share=1",
     "method": "GET",
     "params": {
       "url": "url",
